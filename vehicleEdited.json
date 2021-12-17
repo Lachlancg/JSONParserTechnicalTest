@@ -1,0 +1,85 @@
+[ {
+  "make" : "Renault",
+  "model" : "Megane 3",
+  "name" : "name_398075",
+  "assetType" : "DIGGER",
+  "replaced" : null,
+  "_id" : "398075",
+  "transferred" : false,
+  "visible" : true,
+  "registration" : "registration_398075",
+  "version" : "1.9 DCI 130 ch",
+  "status" : "IN_CIRCULATION"
+}, {
+  "make" : "Audi",
+  "model" : "A4  (8E)",
+  "name" : "name_398119",
+  "assetType" : "CAR",
+  "replaced" : "422108",
+  "_id" : "398119",
+  "transferred" : false,
+  "visible" : true,
+  "registration" : "registration_398119",
+  "version" : "2,5 V6 TDI 163 ch",
+  "status" : "IN_CIRCULATION"
+}, {
+  "make" : "Citroën",
+  "model" : "Jumpy 2",
+  "name" : "name_414215",
+  "assetType" : "VAN",
+  "replaced" : "414331",
+  "_id" : "414215",
+  "transferred" : false,
+  "visible" : true,
+  "assetFeatureTags" : [ "SUSPLUS" ],
+  "registration" : "registration_414215",
+  "version" : "Standard Diesel",
+  "status" : "SOLD"
+}, {
+  "make" : "Citroën",
+  "model" : "3rd Jumpy",
+  "name" : "name_414231",
+  "assetType" : "VAN",
+  "replaced" : "414215",
+  "_id" : "414231",
+  "visible" : true,
+  "litresPer100KmBenchmark" : {
+    "kms" : 0.0,
+    "litres" : 0.0
+  },
+  "historicAssetFeatureTags" : [ ],
+  "assetFeatureTags" : [ ],
+  "registration" : "registration_414231",
+  "version" : "2.0 HDi 100kW",
+  "status" : "IN_CIRCULATION"
+}, {
+  "make" : "Citroën",
+  "model" : "jumpy",
+  "name" : "name_414331",
+  "assetType" : "VAN",
+  "replaced" : null,
+  "_id" : "414331",
+  "transferred" : false,
+  "visible" : true,
+  "assetFeatureTags" : [ "SUSPLUS" ],
+  "registration" : "registration_414331",
+  "version" : "Standard Diesel",
+  "status" : "SOLD"
+}, {
+  "make" : "Audi",
+  "model" : "Q7",
+  "name" : "name_422108",
+  "assetType" : "CAR",
+  "replaced" : null,
+  "_id" : "422108",
+  "transferred" : false,
+  "litresPer100KmBenchmark" : {
+    "kms" : 0.0,
+    "litres" : 0.0
+  },
+  "visible" : true,
+  "assetFeatureTags" : [ "SUSPLUS" ],
+  "registration" : "registration_422108",
+  "version" : "6,0 V12 TDI 500 ch",
+  "status" : "SOLD"
+} ]

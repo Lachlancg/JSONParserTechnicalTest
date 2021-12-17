@@ -8,7 +8,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Vehicle {
+public class Vehicle implements Comparable<Vehicle>{
 
     @JsonProperty("_id") private String id;
     private String make;
@@ -18,6 +18,7 @@ public class Vehicle {
     private String replaced;
     private Map<String, Object> others = new HashMap<>();
 
+    //Jackson custom annotation to deal with unknown properties in JSON object
     @JsonAnyGetter
     public Map<String, Object> getUnknownProperties() { return others; }
     @JsonAnySetter
@@ -36,15 +37,19 @@ public class Vehicle {
         this.replaced = replaced;
     }
 
-   public static Comparator<Vehicle> VehNameComparator = new Comparator<Vehicle>() {
-       @Override
-       public int compare(Vehicle o1, Vehicle o2) {
-           String veh1Name = o1.getName().toUpperCase();
-           String veh2Name = o2.getName().toUpperCase();
+    @Override
+    public String toString() {
+        return this.name;
+    }
 
-           return veh1Name.compareTo(veh2Name);
-       }
-   };
+    @Override
+    public int compareTo(Vehicle o) {
+        //Sorting by vehicle name alphabetically
+        String veh1Name = this.getName().toUpperCase();
+        String veh2Name = o.getName().toUpperCase();
+
+        return veh1Name.compareTo(veh2Name);
+    }
 
     public String getId() {
         return id;
@@ -93,4 +98,7 @@ public class Vehicle {
     public void setName(String name) {
         this.name = name;
     }
+
+
+
 }
