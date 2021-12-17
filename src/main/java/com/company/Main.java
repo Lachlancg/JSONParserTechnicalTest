@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,39 +37,18 @@ public class Main {
 
     private static void printReplacements(ArrayList<Vehicle> vehicles){
 
-        //Create map of all the replacement sequences
-        Map<String, String> sequences = new HashMap<>();
-        for (Vehicle v:vehicles) {
-            String currentId = v.getId();
-            String replacedId = v.getReplaced();
-            //Only add if it exists
-            if(replacedId != null){
-                sequences.put(currentId, replacedId);
-            }
-        }
+        //Generate sequences from vehicle objects
+        Map<String, String> sequences = generateSequences(vehicles);
 
-        //Now find all the vehicles (nodes) which start a sequence
-        ArrayList<String> startNodes = new ArrayList<>();
+        //Find the start nodes for each chain of sequences
+        ArrayList<String> startNodes = findStartNodes(sequences);
 
-        for (Map.Entry<String, String> node : sequences.entrySet()) {
+        //Build the chains from the start nodes and sequences
+        buildAndPrintChain(startNodes, sequences);
+    }
 
-            //Get the current nodes key and use it to search the map of sequences
-            String searchkey = node.getKey();
-            //This will be slow as I am searching the map by value
-            Optional<Map.Entry<String, String>> result = sequences
-                    .entrySet()
-                    .stream()
-                    .filter(entry -> entry.getValue().equals(searchkey))
-                    .sorted(Map.Entry.comparingByKey())
-                    .findFirst();
-
-            //If no result is found, we know this is the first node in the chain, and we can add it to our list
-            if (result.isEmpty()){
-                startNodes.add(node.getKey());
-            }
-        }
-
-        //Now we build the chain of sequences
+    private static void buildAndPrintChain(ArrayList<String> startNodes, Map<String, String> sequences){
+        //Build the chain of sequences
         for (String n : startNodes){
             StringBuilder outStringSb = new StringBuilder();
             //Get the first key to search
@@ -93,9 +73,46 @@ public class Main {
                     break;
                 }
             }
+        }
+    }
 
+    private static ArrayList<String> findStartNodes(Map<String, String> sequences){
+        //Now find all the vehicles (nodes) which start a sequence
+        ArrayList<String> startNodes = new ArrayList<>();
+
+        for (Map.Entry<String, String> node : sequences.entrySet()) {
+
+            //Get the current nodes key and use it to search the map of sequences
+            String searchKey = node.getKey();
+            //This will be slow as I am searching the map by value
+            Optional<Map.Entry<String, String>> result = sequences
+                    .entrySet()
+                    .stream()
+                    .filter(entry -> entry.getValue().equals(searchKey))
+                    .sorted(Map.Entry.comparingByKey())
+                    .findFirst();
+
+            //If no result is found, we know this is the first node in the chain, and we can add it to our list
+            if (result.isEmpty()){
+                startNodes.add(node.getKey());
+            }
         }
 
+        return startNodes;
+    }
+
+    private static Map<String, String> generateSequences(ArrayList<Vehicle> vehicles){
+        //Create map of all the replacement sequences
+        Map<String, String> sequences = new HashMap<>();
+        for (Vehicle v:vehicles) {
+            String currentId = v.getId();
+            String replacedId = v.getReplaced();
+            //Only add if it exists
+            if(replacedId != null){
+                sequences.put(currentId, replacedId);
+            }
+        }
+        return sequences;
     }
 
     private static void modifyVehiclesIfJumpy(ArrayList<Vehicle> vehicles) {
