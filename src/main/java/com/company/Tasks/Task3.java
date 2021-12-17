@@ -19,7 +19,7 @@ public class Task3 extends AbstractTask {
     /**
      * Modifies the vehicle assetType if model contains jumpy
      *
-     * @param vehicles
+     * @param vehicles List of vehicles
      */
     public static void modifyVehiclesIfJumpy(ArrayList<Vehicle> vehicles) {
 

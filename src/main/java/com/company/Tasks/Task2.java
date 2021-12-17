@@ -22,7 +22,7 @@ public class Task2 extends AbstractTask {
     /**
      * Creates a JSON file from the counts of each make of vehicle
      *
-     * @param vehicles
+     * @param vehicles List of vehicles
      */
     public static void createJSONForMake(ArrayList<Vehicle> vehicles) {
 
@@ -42,12 +42,13 @@ public class Task2 extends AbstractTask {
     /**
      * Counts the number of occurrences of each make of vehicle
      *
-     * @param vehicles
-     * @return
+     * @param vehicles List of vehicles
+     * @return Map of make counts
      */
     public static Map<String, Long> countMakes(ArrayList<Vehicle> vehicles) {
 
         //Use collectors to group common vehicles makes, and count the number of occurrences, store result in a map
-        return vehicles.stream().collect(Collectors.groupingBy(v -> v.getMake(), Collectors.counting()));
+        //Use method reference to retrieve vehicle make
+        return vehicles.stream().collect(Collectors.groupingBy(Vehicle::getMake, Collectors.counting()));
     }
 }

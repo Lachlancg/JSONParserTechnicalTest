@@ -17,7 +17,7 @@ public class Task1 extends AbstractTask {
     /**
      * Prints sorted vehicle objects
      *
-     * @param vehicles
+     * @param vehicles List of vehicles
      */
     public static void printVehiclesSorted(ArrayList<Vehicle> vehicles) {
 

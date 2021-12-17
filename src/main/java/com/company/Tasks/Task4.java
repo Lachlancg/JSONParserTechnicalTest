@@ -19,7 +19,7 @@ public class Task4 extends AbstractTask {
     /**
      * Organises steps to print vehicle replacements
      *
-     * @param vehicles
+     * @param vehicles List of vehicles
      */
     public static void printReplacements(ArrayList<Vehicle> vehicles) {
 
@@ -36,8 +36,8 @@ public class Task4 extends AbstractTask {
     /**
      * Builds the replaced vehicle chain and prints to console
      *
-     * @param startNodes
-     * @param sequences
+     * @param startNodes List of start nodes
+     * @param sequences List of sequence pairs
      */
     private static void buildAndPrintChain(ArrayList<String> startNodes, Map<String, String> sequences) {
         //Build the chain of sequences
@@ -71,8 +71,8 @@ public class Task4 extends AbstractTask {
     /**
      * Finds the start nodes of each sequence
      *
-     * @param sequences
-     * @return
+     * @param sequences List of sequences
+     * @return Start nodes
      */
     public static ArrayList<String> findStartNodes(Map<String, String> sequences) {
         //Now find all the vehicles (nodes) which start a sequence
@@ -102,8 +102,8 @@ public class Task4 extends AbstractTask {
     /**
      * Generates sequence pairs from vehicle objects
      *
-     * @param vehicles
-     * @return
+     * @param vehicles List of vehicles
+     * @return Sequences
      */
     public static Map<String, String> generateSequences(ArrayList<Vehicle> vehicles) {
         //Create map of all the replacement sequences
