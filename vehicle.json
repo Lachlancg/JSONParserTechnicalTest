@@ -1,0 +1,93 @@
+[{
+    "_id" : "422108",
+    "assetType" : "CAR",
+    "litresPer100KmBenchmark" : {
+        "kms" : 0.0,
+        "litres" : 0.0
+    },
+    "make" : "Audi",
+    "model" : "Q7",
+    "registration" : "registration_422108",
+    "transferred" : false,
+    "version" : "6,0 V12 TDI 500 ch",
+    "visible" : true,
+    "name" : "name_422108",
+    "status" : "SOLD",
+    "assetFeatureTags" : [
+        "SUSPLUS"
+    ]
+},
+    {
+        "_id" : "398075",
+        "make" : "Renault",
+        "model" : "Megane 3",
+        "registration" : "registration_398075",
+        "transferred" : false,
+        "version" : "1.9 DCI 130 ch",
+        "visible" : true,
+        "assetType" : "DIGGER",
+        "name" : "name_398075",
+        "status" : "IN_CIRCULATION"
+    },
+    {
+        "_id" : "398119",
+        "make" : "Audi",
+        "model" : "A4  (8E)",
+        "registration" : "registration_398119",
+        "transferred" : false,
+        "version" : "2,5 V6 TDI 163 ch",
+        "visible" : true,
+        "assetType" : "CAR",
+        "name" : "name_398119",
+        "status" : "IN_CIRCULATION",
+        "replaced" : "422108"
+    },
+    {
+        "_id" : "414215",
+        "make" : "Citroën",
+        "model" : "Jumpy 2",
+        "registration" : "registration_414215",
+        "transferred" : false,
+        "version" : "Standard Diesel",
+        "visible" : true,
+        "assetType" : "CAR",
+        "name" : "name_414215",
+        "status" : "SOLD",
+        "assetFeatureTags" : [
+            "SUSPLUS"
+        ],
+        "replaced" : "414331"
+    },
+    {
+        "_id" : "414231",
+        "registration" : "registration_414231",
+        "name" : "name_414231",
+        "assetType" : "CAR",
+        "make" : "Citroën",
+        "model" : "3rd Jumpy",
+        "version" : "2.0 HDi 100kW",
+        "visible" : true,
+        "litresPer100KmBenchmark" : {
+            "kms" : 0.0,
+            "litres" : 0.0
+        },
+        "assetFeatureTags" : [],
+        "historicAssetFeatureTags" : [],
+        "status" : "IN_CIRCULATION",
+        "replaced" : "414215"
+    },
+    {
+        "_id" : "414331",
+        "make" : "Citroën",
+        "model" : "jumpy",
+        "registration" : "registration_414331",
+        "transferred" : false,
+        "version" : "Standard Diesel",
+        "visible" : true,
+        "assetType" : "CAR",
+        "name" : "name_414331",
+        "status" : "SOLD",
+        "assetFeatureTags" : [
+            "SUSPLUS"
+        ],
+    }]
