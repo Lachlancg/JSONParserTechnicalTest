@@ -16,17 +16,29 @@ public class Main {
         //Retrieve the vehicles from the JSON file
         ArrayList<Vehicle> vehicles = getVehicles("vehicle.json");
 
+        //Task 1 - Print the vehicles in
+        printVehiclesSorted(vehicles);
+
     }
 
-    private static ArrayList getVehicles(String filePath) {
+    private static void printVehiclesSorted(ArrayList<Vehicle> vehicles){
+
+        //Sort vehicles by make using custom comparator
+        vehicles.sort(Vehicle.VehNameComparator);
+
+        //Iterate over vehicles and print the make
+        vehicles.forEach(v -> System.out.println(v.getName()));
+    }
+
+    private static ArrayList<Vehicle> getVehicles(String filePath) {
         //Map<String, Vehicle> vehicles = new HashMap<>();
-        ArrayList vehicles = new ArrayList();
+        ArrayList<Vehicle> vehicles = new ArrayList<>();
 
         try {
             ObjectMapper mapper = new ObjectMapper();
             mapper.enable(JsonParser.Feature.ALLOW_TRAILING_COMMA);
 
-            vehicles = mapper.readValue(new File("vehicle.json"), new TypeReference<ArrayList<Vehicle>>(){});
+            vehicles = mapper.readValue(new File(filePath), new TypeReference<ArrayList<Vehicle>>(){});
 
         } catch (IOException e) {
             e.printStackTrace();
