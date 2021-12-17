@@ -8,7 +8,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -27,7 +29,72 @@ public class Main {
         //Task 3 - Replace vehicle types whom contain model jumpy to VAN
         modifyVehiclesIfJumpy(vehicles);
 
+        //Task 4
+        printReplacements(vehicles);
 
+    }
+
+    private static void printReplacements(ArrayList<Vehicle> vehicles){
+
+        //Create map of all the replacement sequences
+        Map<String, String> sequences = new HashMap<>();
+        for (Vehicle v:vehicles) {
+            String currentId = v.getId();
+            String replacedId = v.getReplaced();
+            //Only add if it exists
+            if(replacedId != null){
+                sequences.put(currentId, replacedId);
+            }
+        }
+
+        //Now find all the vehicles (nodes) which start a sequence
+        ArrayList<String> startNodes = new ArrayList<>();
+
+        for (Map.Entry<String, String> node : sequences.entrySet()) {
+
+            //Get the current nodes key and use it to search the map of sequences
+            String searchkey = node.getKey();
+            //This will be slow as I am searching the map by value
+            Optional<Map.Entry<String, String>> result = sequences
+                    .entrySet()
+                    .stream()
+                    .filter(entry -> entry.getValue().equals(searchkey))
+                    .sorted(Map.Entry.comparingByKey())
+                    .findFirst();
+
+            //If no result is found, we know this is the first node in the chain, and we can add it to our list
+            if (result.isEmpty()){
+                startNodes.add(node.getKey());
+            }
+        }
+
+        //Now we build the chain of sequences
+        for (String n : startNodes){
+            StringBuilder outStringSb = new StringBuilder();
+            //Get the first key to search
+            String key = n;
+            while (true){
+                //Search the map for the corresponding value
+                String result = sequences.get(key);
+
+                //If we find a value we know were not on the last node of the chain, and we add the details to the out string
+                if (result != null){
+                    //If it is the first node to be added, then add the key
+                    if (outStringSb.isEmpty()){
+                        outStringSb.append(key);
+                    }
+                    outStringSb.append("->");
+                    outStringSb.append(result);
+                    key = result;
+                }
+                //We know this would be the last node of the chain, so we print the result and break the loop
+                else{
+                    System.out.println(outStringSb);
+                    break;
+                }
+            }
+
+        }
 
     }
 
