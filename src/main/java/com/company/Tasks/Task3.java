@@ -21,7 +21,7 @@ public class Task3 extends AbstractTask {
      *
      * @param vehicles List of vehicles
      */
-    public static void modifyVehiclesIfJumpy(ArrayList<Vehicle> vehicles) {
+    private static void modifyVehiclesIfJumpy(ArrayList<Vehicle> vehicles) {
 
         try {
             //Could use parallelStream in future to increase performance

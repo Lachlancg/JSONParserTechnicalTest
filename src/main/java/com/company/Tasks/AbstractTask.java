@@ -11,8 +11,6 @@ import java.io.UncheckedIOException;
 import java.util.ArrayList;
 
 public abstract class AbstractTask {
-
-
     /**
      * Parses JSON file and returns an ArrayList
      *

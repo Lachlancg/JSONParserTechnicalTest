@@ -24,7 +24,7 @@ public class Task2 extends AbstractTask {
      *
      * @param vehicles List of vehicles
      */
-    public static void createJSONForMake(ArrayList<Vehicle> vehicles) {
+    private static void createJSONForMake(ArrayList<Vehicle> vehicles) {
 
         try {
             //Retrieve the count of each make of vehicle

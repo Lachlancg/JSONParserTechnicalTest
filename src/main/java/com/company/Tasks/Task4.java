@@ -82,7 +82,8 @@ public class Task4 extends AbstractTask {
 
             //Get the current nodes key and use it to search the map of sequences
             String searchKey = node.getKey();
-            //This will be slow as I am searching the map by value
+            //This will be slow as I am searching the map by value, this is not too much of an issue for this
+            //amount of data but could become an issue with a large number of sequences
             Optional<Map.Entry<String, String>> result = sequences
                     .entrySet()
                     .stream()

@@ -19,7 +19,7 @@ public class Task1 extends AbstractTask {
      *
      * @param vehicles List of vehicles
      */
-    public static void printVehiclesSorted(ArrayList<Vehicle> vehicles) {
+    private static void printVehiclesSorted(ArrayList<Vehicle> vehicles) {
 
         //Sort vehicles by make using custom comparator
         Collections.sort(vehicles);
