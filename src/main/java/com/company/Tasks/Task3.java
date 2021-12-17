@@ -1,7 +1,6 @@
 package com.company.Tasks;
 
 import com.company.Models.Vehicle;
-import com.company.SharedTaskFunctions;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
@@ -9,13 +8,19 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.ArrayList;
 
-public class Task3 {
+public class Task3 extends AbstractTask {
 
     public static void main(String[] args) {
 
-        modifyVehiclesIfJumpy(SharedTaskFunctions.getVehicles("vehicle.json"));
+        //Task 3 - Replace vehicle types whom contain model jumpy to VAN
+        modifyVehiclesIfJumpy(getVehicles("vehicle.json"));
     }
 
+    /**
+     * Modifies the vehicle assetType if model contains jumpy
+     *
+     * @param vehicles
+     */
     public static void modifyVehiclesIfJumpy(ArrayList<Vehicle> vehicles) {
 
         try {

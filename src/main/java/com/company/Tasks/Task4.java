@@ -1,20 +1,26 @@
 package com.company.Tasks;
 
 import com.company.Models.Vehicle;
-import com.company.SharedTaskFunctions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class Task4{
+public class Task4 extends AbstractTask {
 
     public static void main(String[] args) {
-        printReplacements(SharedTaskFunctions.getVehicles("vehicle.json"));
+
+        //Task 4 - Calculate chains of replacement and print them
+        printReplacements(getVehicles("vehicle.json"));
     }
 
 
+    /**
+     * Organises steps to print vehicle replacements
+     *
+     * @param vehicles
+     */
     public static void printReplacements(ArrayList<Vehicle> vehicles) {
 
         //Generate sequences from vehicle objects
@@ -27,6 +33,12 @@ public class Task4{
         buildAndPrintChain(startNodes, sequences);
     }
 
+    /**
+     * Builds the replaced vehicle chain and prints to console
+     *
+     * @param startNodes
+     * @param sequences
+     */
     private static void buildAndPrintChain(ArrayList<String> startNodes, Map<String, String> sequences) {
         //Build the chain of sequences
         for (String n : startNodes) {
@@ -56,6 +68,12 @@ public class Task4{
         }
     }
 
+    /**
+     * Finds the start nodes of each sequence
+     *
+     * @param sequences
+     * @return
+     */
     public static ArrayList<String> findStartNodes(Map<String, String> sequences) {
         //Now find all the vehicles (nodes) which start a sequence
         ArrayList<String> startNodes = new ArrayList<>();
@@ -81,6 +99,12 @@ public class Task4{
         return startNodes;
     }
 
+    /**
+     * Generates sequence pairs from vehicle objects
+     *
+     * @param vehicles
+     * @return
+     */
     public static Map<String, String> generateSequences(ArrayList<Vehicle> vehicles) {
         //Create map of all the replacement sequences
         Map<String, String> sequences = new HashMap<>();

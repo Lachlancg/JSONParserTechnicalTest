@@ -1,18 +1,24 @@
 package com.company.Tasks;
 
 import com.company.Models.Vehicle;
-import com.company.SharedTaskFunctions;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Task1{
+public class Task1 extends AbstractTask {
 
     public static void main(String[] args) {
 
-        printVehiclesSorted(SharedTaskFunctions.getVehicles("vehicle.json"));
+        //Task 1 - Print the vehicles to console in alphabetical order
+        printVehiclesSorted(getVehicles("vehicle.json"));
     }
 
+
+    /**
+     * Prints sorted vehicle objects
+     *
+     * @param vehicles
+     */
     public static void printVehiclesSorted(ArrayList<Vehicle> vehicles) {
 
         //Sort vehicles by make using custom comparator
