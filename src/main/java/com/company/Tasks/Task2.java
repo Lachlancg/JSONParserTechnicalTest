@@ -1,6 +1,7 @@
 package com.company.Tasks;
 
 import com.company.Models.Vehicle;
+import com.company.SharedTaskFunctions;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
@@ -10,13 +11,13 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Task2 extends Task{
+public class Task2{
 
     public static void main(String[] args) {
-        createJSONForMake(getVehicles("vehicle.json"));
+        createJSONForMake(SharedTaskFunctions.getVehicles("vehicle.json"));
     }
 
-    private static void createJSONForMake(ArrayList<Vehicle> vehicles) {
+    public static void createJSONForMake(ArrayList<Vehicle> vehicles) {
 
         try {
             //Retrieve the count of each make of vehicle
@@ -30,7 +31,7 @@ public class Task2 extends Task{
         }
     }
 
-    private static Map<String, Long> countMakes(ArrayList<Vehicle> vehicles) {
+    public static Map<String, Long> countMakes(ArrayList<Vehicle> vehicles) {
 
         //Use collectors to group common vehicles makes, and count the number of occurrences, store result in a map
         return vehicles.stream().collect(Collectors.groupingBy(v -> v.getMake(), Collectors.counting()));

@@ -1,21 +1,4 @@
 [ {
-  "make" : "Audi",
-  "model" : "Q7",
-  "name" : "name_422108",
-  "assetType" : "CAR",
-  "replaced" : null,
-  "_id" : "422108",
-  "transferred" : false,
-  "litresPer100KmBenchmark" : {
-    "kms" : 0.0,
-    "litres" : 0.0
-  },
-  "visible" : true,
-  "assetFeatureTags" : [ "SUSPLUS" ],
-  "registration" : "registration_422108",
-  "version" : "6,0 V12 TDI 500 ch",
-  "status" : "SOLD"
-}, {
   "make" : "Renault",
   "model" : "Megane 3",
   "name" : "name_398075",
@@ -81,5 +64,22 @@
   "assetFeatureTags" : [ "SUSPLUS" ],
   "registration" : "registration_414331",
   "version" : "Standard Diesel",
+  "status" : "SOLD"
+}, {
+  "make" : "Audi",
+  "model" : "Q7",
+  "name" : "name_422108",
+  "assetType" : "CAR",
+  "replaced" : null,
+  "_id" : "422108",
+  "transferred" : false,
+  "litresPer100KmBenchmark" : {
+    "kms" : 0.0,
+    "litres" : 0.0
+  },
+  "visible" : true,
+  "assetFeatureTags" : [ "SUSPLUS" ],
+  "registration" : "registration_422108",
+  "version" : "6,0 V12 TDI 500 ch",
   "status" : "SOLD"
 } ]

@@ -1,15 +1,16 @@
 package com.company.Tasks;
 
 import com.company.Models.Vehicle;
+import com.company.SharedTaskFunctions;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Task1 extends Task{
+public class Task1{
 
     public static void main(String[] args) {
 
-        printVehiclesSorted(getVehicles("vehicle.json"));
+        printVehiclesSorted(SharedTaskFunctions.getVehicles("vehicle.json"));
     }
 
     public static void printVehiclesSorted(ArrayList<Vehicle> vehicles) {

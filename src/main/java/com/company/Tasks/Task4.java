@@ -1,20 +1,21 @@
 package com.company.Tasks;
 
 import com.company.Models.Vehicle;
+import com.company.SharedTaskFunctions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class Task4 extends Task{
+public class Task4{
 
     public static void main(String[] args) {
-        printReplacements(getVehicles("vehicle.json"));
+        printReplacements(SharedTaskFunctions.getVehicles("vehicle.json"));
     }
 
 
-    private static void printReplacements(ArrayList<Vehicle> vehicles) {
+    public static void printReplacements(ArrayList<Vehicle> vehicles) {
 
         //Generate sequences from vehicle objects
         Map<String, String> sequences = generateSequences(vehicles);
@@ -55,7 +56,7 @@ public class Task4 extends Task{
         }
     }
 
-    private static ArrayList<String> findStartNodes(Map<String, String> sequences) {
+    public static ArrayList<String> findStartNodes(Map<String, String> sequences) {
         //Now find all the vehicles (nodes) which start a sequence
         ArrayList<String> startNodes = new ArrayList<>();
 
@@ -80,7 +81,7 @@ public class Task4 extends Task{
         return startNodes;
     }
 
-    private static Map<String, String> generateSequences(ArrayList<Vehicle> vehicles) {
+    public static Map<String, String> generateSequences(ArrayList<Vehicle> vehicles) {
         //Create map of all the replacement sequences
         Map<String, String> sequences = new HashMap<>();
         for (Vehicle v : vehicles) {

@@ -1,6 +1,7 @@
 package com.company.Tasks;
 
 import com.company.Models.Vehicle;
+import com.company.SharedTaskFunctions;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
@@ -8,14 +9,14 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.ArrayList;
 
-public class Task3 extends Task {
+public class Task3 {
 
     public static void main(String[] args) {
 
-        modifyVehiclesIfJumpy(getVehicles("vehicle.json"));
+        modifyVehiclesIfJumpy(SharedTaskFunctions.getVehicles("vehicle.json"));
     }
 
-    private static void modifyVehiclesIfJumpy(ArrayList<Vehicle> vehicles) {
+    public static void modifyVehiclesIfJumpy(ArrayList<Vehicle> vehicles) {
 
         try {
             //Could use parallelStream in future to increase performance

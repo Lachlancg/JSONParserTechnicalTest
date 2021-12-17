@@ -1,4 +1,4 @@
-package com.company.Tasks;
+package com.company;
 
 import com.company.Models.Vehicle;
 import com.fasterxml.jackson.core.JsonParser;
@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.ArrayList;
 
-public abstract class Task {
+public class SharedTaskFunctions {
 
     public static ArrayList<Vehicle> getVehicles(String filePath) {
         ArrayList<Vehicle> vehicles;
