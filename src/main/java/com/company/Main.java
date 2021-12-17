@@ -24,7 +24,31 @@ public class Main {
         //Task 2 - Count number of makes and write to JSON file
         createJSONForMake(vehicles);
 
+        //Task 3 - Replace vehicle types whom contain model jumpy to VAN
+        modifyVehiclesIfJumpy(vehicles);
+
+
+
     }
+
+    private static void modifyVehiclesIfJumpy(ArrayList<Vehicle> vehicles) {
+
+        try{
+            //Could use parallelStream in future to increase performance
+            //Use stream filter lambada to find all models containing jumpy and then iterate over results to replace assetType with VAN
+            vehicles.stream().filter(v -> v.getModel().toLowerCase().contains("jumpy")).forEach(v -> v.setAssetType("VAN"));
+
+            //Create an object mapper and write arrayList to JSON file
+            ObjectMapper mapper = new ObjectMapper();
+
+            mapper.writerWithDefaultPrettyPrinter().writeValue(new File("vehicleEdited.json"), vehicles);
+
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
 
     private static void createJSONForMake(ArrayList<Vehicle> vehicles){
 
