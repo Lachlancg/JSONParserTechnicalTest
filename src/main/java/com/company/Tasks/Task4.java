@@ -7,12 +7,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class Task4 extends AbstractTask {
+public class Task4 {
 
     public static void main(String[] args) {
 
         //Task 4 - Calculate chains of replacement and print them
-        printReplacements(getVehicles("vehicle.json"));
+        printReplacements(Vehicle.getVehicles("vehicle.json"));
     }
 
 

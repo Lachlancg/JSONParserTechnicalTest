@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Task2 extends AbstractTask {
+public class Task2 {
 
     public static void main(String[] args) {
 
         //Task 2 - Count number of makes and write to JSON file
-        createJSONForMake(getVehicles("vehicle.json"));
+        createJSONForMake(Vehicle.getVehicles("vehicle.json"));
     }
 
 

@@ -5,12 +5,12 @@ import com.company.Models.Vehicle;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Task1 extends AbstractTask {
+public class Task1 {
 
     public static void main(String[] args) {
 
         //Task 1 - Print the vehicles to console in alphabetical order
-        printVehiclesSorted(getVehicles("vehicle.json"));
+        printVehiclesSorted(Vehicle.getVehicles("vehicle.json"));
     }
 
 

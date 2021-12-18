@@ -8,12 +8,12 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.ArrayList;
 
-public class Task3 extends AbstractTask {
+public class Task3 {
 
     public static void main(String[] args) {
 
         //Task 3 - Replace vehicle types whom contain model jumpy to VAN
-        modifyVehiclesIfJumpy(getVehicles("vehicle.json"));
+        modifyVehiclesIfJumpy(Vehicle.getVehicles("vehicle.json"));
     }
 
     /**
